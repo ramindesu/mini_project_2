@@ -11,3 +11,9 @@ class BaseModel(models.Model):
     class Meta:
         abstract = True
 
+class Instructor(BaseModel):
+    name = models.CharField(max_length=60)
+    field = models.CharField(max_length=60)
+    description = models.TextField(null= True , blank=True)
+
+    
