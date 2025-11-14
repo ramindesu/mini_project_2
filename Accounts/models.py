@@ -22,3 +22,16 @@ class Instructor(BaseModel):
         verbose_name = 'Instructor'
         verbose_name_plural = 'Instructors'
         ordering = ['name']
+
+class Participants(BaseModel):
+    name = models.CharField(max_length=60)
+    last_name = models.CharField(max_length=60)
+
+    def __str__(self):
+        return f"{self.name} - {self.last_name}"
+    
+    class Meta:
+        verbose_name = "Participant"
+        verbose_name_plural= "Participants"
+        ordering = ['name']
+        
