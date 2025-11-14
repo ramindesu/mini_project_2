@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "Accounts",
     "Enrollmentss",
     "Workshop",
+    'config'
 ]
 
 MIDDLEWARE = [

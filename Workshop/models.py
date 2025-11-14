@@ -14,4 +14,14 @@ class Workshop(BaseModel):
         verbose_name = 'Workshop'
         verbose_name_plural = 'Workshops'
         ordering = ['title']
-        
+
+
+ 
+class Tag(BaseModel):
+    title = models.CharField(max_length=60)
+    Workshop = models.ManyToManyField(Workshop,through="TagWorkshopCustomTable")
+
+class TagWorkshopCustomTable(BaseModel):
+    tag = models.ForeignKey(Tag,on_delete=models.CASCADE)
+    Workshop = models.ForeignKey(Workshop,on_delete=models.CASCADE)
+    test_field = models.CharField(max_length=2)
